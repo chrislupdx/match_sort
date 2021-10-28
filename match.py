@@ -3,30 +3,39 @@ def bfmatch(text, pattern):
     textlen = len(text)
     patlen = len(pattern)
     deltlen = textlen - patlen
-    j = 0 # text iterator
     i = 0 # pattern iterator
+    success = False
 
     while(i < deltlen):  
-        while(j < patlen and (pattern[j] == text[i + j])):  
-        #while(j < patlen):  
-            #print the base text 
-            #for a in text:
-            #    print(a, end="")
-            #print("")
-            #produce spaces + display pattern[j]
-            #x = 0
-            #while (x < j):
-            #    print(" ", end="")
-            #    x += 1
-            print(pattern[j])
-            #print("j is ", j)
-            j += 1
-        if(j == patlen): #if we reached the end of the pattern
-            print("success") 
-            return #might be redundant
-        print("i is", i)
-    i += 1
+        j = 0
+        #print the base text 
+        for a in text:
+            print(a, end="")
+        print("")
 
-text = "There are woundrous things. There are magical things. There are dangerous things. We cake"
+        while(j < patlen and (pattern[j] == text[i + j])):  
+            #produce spaces + display pattern[j]
+            x = 0
+            while (x < j):
+                print(" ", end="")
+                x += 1
+            print(pattern[j])
+            j += 1
+
+        if(j == patlen): #if we reached the end of the pattern
+            success = True
+            return #might be redundant
+        #print("i is", i)
+        i += 1
+    print(success) 
+    #while(i < deltlen):
+    #    j = 0
+    #    while(j < patlen and (pattern[j] == text[i + j])):  
+    #        j += 1
+    #        print("j is ", j)
+    #    print("i is ", i)
+    #    i += 1
+
+text = "There are woundrous things. There are magical things. There are dangrous things. We cake"
 pattern  = "There are dangerous things."
 bfmatch(text, pattern)
