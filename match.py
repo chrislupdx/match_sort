@@ -16,7 +16,7 @@ def bfmatch(text, pattern):
         while(j < patlen and (pattern[j] == text[i + j])):  
             #produce spaces + display pattern[j]
             x = 0
-            while (x < j):
+            while (x < i + j):
                 print(" ", end="")
                 x += 1
             print(pattern[j])
@@ -28,14 +28,6 @@ def bfmatch(text, pattern):
         #print("i is", i)
         i += 1
     print(success) 
-    #while(i < deltlen):
-    #    j = 0
-    #    while(j < patlen and (pattern[j] == text[i + j])):  
-    #        j += 1
-    #        print("j is ", j)
-    #    print("i is ", i)
-    #    i += 1
-
-text = "There are woundrous things. There are magical things. There are dangrous things. We cake"
+text = "There are woundrous things. There are magical things. There are dangerous things. We cake"
 pattern  = "There are dangerous things."
 bfmatch(text, pattern)
