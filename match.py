@@ -1,4 +1,4 @@
-from random import Random
+from random import randrange
 #this is a python 3 implementation of a brute-force matching sort algorithm
 def bfmatch(text, pattern):
     textlen = len(text)
@@ -25,15 +25,20 @@ def bfmatch(text, pattern):
     print(success) 
 
 def interface():
-    #print("Match Sort Algorithm, pick a size of your base string")
-    #text_size = int(input())
-    #
-    #rand_text = [text_size]
-    #for char in rand_text:
-    #    #temp = pick 1 / 128
-    #    temp_char = chr(temp)
-    #    rand_text.append(temp_char)
+    print("Match Sort Algorithm, pick a size of your base string")
+    text_size = int(input())
+    rand_text = [text_size]
+    
+    for char in range(len(rand_text)):
+        temp = randrange(128)
+        temp_char = chr(temp)
+        #rand_text.append(temp_char)a
+        rand_text[char] = temp_char
+    
+    for a in rand_text:
+        print(a)
 
+    print("pign")
     #generate pattern of  the same type as 
     #generate an interface funciton
     #default_text = "There are woundrous things. There are magical things. There are dangerous things. We get what we deserve."
